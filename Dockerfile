@@ -27,7 +27,8 @@ RUN curl -SLO ${PGBOUNCER_TAR_URL} && \
 RUN cd pgbouncer-${PGBOUNCER_VERSION} && \
 	./configure --prefix=/usr/local --with-libevent=libevent-prefix && \
 	make && \
-	make install
+	make install && \
+	echo "pgbouncer now installed in $(which pgbouncer)"
 
 USER pgbouncer
 
